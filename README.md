@@ -29,8 +29,8 @@ This event is described in [Jupyter Javascript Events documentation page](http:/
 To rid the notebook of the autorun features just clear the output cell.
 
 For more complete examples, see the
-+ [sample notebook - trusted](http://nbviewer.jupyter.org/github/oscar6echo/notebook-autorun/blob/master/demo_notebook_autorun_trusted.ipynb)
-+ [sample notebook - untrusted](http://nbviewer.jupyter.org/github/oscar6echo/notebook-autorun/blob/master/demo_notebook_autorun_untrusted.ipynb)
++ [sample notebook - trusted](http://nbviewer.jupyter.org/github/oscar6echo/notebook-autorun/blob/master/demo_autorun_trusted.ipynb)
++ [sample notebook - untrusted](http://nbviewer.jupyter.org/github/oscar6echo/notebook-autorun/blob/master/demo_autorun_untrusted.ipynb)
 
 Also, to get a better understanding of what's going on under the hood, open the console and examine the log.
 
