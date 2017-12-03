@@ -2,8 +2,11 @@ notebook-autorun
 ================
 
 | This is a Python package to allow auto-run of certains cells in a
-  Jupyter notebook at kernel start.
-| For security reasons it only works in **trusted** notebooks.
+  `Jupyter
+  notebook <http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html>`__
+  at kernel start.
+| For security reasons it only works in `**trusted**
+  notebooks <http://jupyter-notebook.readthedocs.io/en/stable/security.html#security-in-notebook-documents>`__.
 
 1 - Install
 -----------
@@ -27,13 +30,26 @@ In a notebook cell:
     Autorun(cells=cells).add_js()
     # (0-indexed) cells 2, 3 will be run at notebook start 
 
-| This will inject javascript code in the output cell.
-| This code will react on the next ``kernel_ready.Kernel`` event (i.e.
-  at notebook start or kernel restart) to execute the selected cells.
-| To get rid of this code just clear the output cell.
+| This will inject javascript code (in the output cell) which will react
+  on the next ``kernel_ready.Kernel`` event (i.e. at notebook start or
+  kernel restart) to execute the selected cells.
+| This event is described in `Jupyter Javascript Events documentation
+  page <http://jupyter.readthedocs.io/en/latest/development_guide/js_events.html>`__.
+  While this page is outdated in some respects, it appears still valid
+  about the ``kernel_ready.Kernel`` event.
+
+To rid the notebook of the autorun features just clear the output cell.
+
+For more complete examples, see the + `sample notebook -
+trusted <http://nbviewer.jupyter.org/github/oscar6echo/notebook-autorun/blob/master/demo_notebook_autorun_trusted.ipynb>`__
++ `sample notebook -
+untrusted <http://nbviewer.jupyter.org/github/oscar6echo/notebook-autorun/blob/master/demo_notebook_autorun_untrusted.ipynb>`__
+
+Also, to get a better understanding of what's going on under the hood,
+open the console and examine the log.
 
 2.1 - How to select cells for autorun
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | The cells to autorun can be determined by one of the 3 args below.
 | Only one of them must be specified:
@@ -133,8 +149,8 @@ You can remove these messages:
     Autorun(metadata=True).add_js()
     # no visible output - but the js code is injected
 
-2 - Security
-^^^^^^^^^^^^
+2.3 - Security
+~~~~~~~~~~~~~~
 
 Because a notebook is designed to allow the user to write arbitrary
 code, it has full access to many resources.
