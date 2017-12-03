@@ -1,14 +1,14 @@
 
 __name__ = 'notebook_autorun'
+name_url = __name__.replace('_', '-')
+
 __packages__ = [__name__]
-
-__version__ = '0.1.1'
-
+__version__ = '0.1.3'
 __description__ = 'Auto run certain cells upon notebook start - if trusted'
 __author__ = 'oscar6echo'
 __author_email__ = 'olivier.borderies@gmail.com'
-__url__ = 'https://github.com/oscar6echo/{}'.format(__name__)
-__download_url__ = 'https://github.com/oscar6echo/{}/tarball/{}'.format(__name__,
+__url__ = 'https://github.com/oscar6echo/{}'.format(name_url)
+__download_url__ = 'https://github.com/oscar6echo/{}/tarball/{}'.format(name_url,
                                                                         __version__)
 __keywords__ = ['python', 'display', 'javascript']
 __license__ = 'MIT'
