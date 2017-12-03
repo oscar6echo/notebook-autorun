@@ -20,7 +20,6 @@ require([
 	codecell,
 	promises
 ) {
-		// promises.app_initialized.then(function (appname) {
 		events.on('kernel_ready.Kernel', function () {
 			console.log('start autorun');
 			if (Jupyter.notebook.trusted) {
@@ -47,7 +46,6 @@ require([
 				{% endif %}
 
 				console.log(arrCells);
-				// console.log(nbCells);
 				for (let i of arrCells) {
 					let nbCell = nbCells[i];
 					if (nbCell) {
@@ -61,10 +59,11 @@ require([
 			}
 			else {
 				// notebook is not trusted let the user know about it
+				// by definition this should never happen as
+				// js cannot run if notebook not trustee
 				console.log('notebook is not trusted');
 				console.log('nothing is done');
 			}
-			// }
 		});
 
 

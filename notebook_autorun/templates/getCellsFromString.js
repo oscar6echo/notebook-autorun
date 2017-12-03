@@ -1,12 +1,12 @@
 
 
-function getCellsFromString(StrCells, nbCells) {
-	//StrCells contains a Python string representing a list
+function getCellsFromString(strCells, nbCells) {
+	//strCells contains a Python string representing a list
 
 	let arrCell = [];
-	if (StrCells.indexOf(':') > -1) {
+	if (strCells.indexOf(':') > -1) {
 
-		let listCell = StrCells.split(':'),
+		let listCell = strCells.split(':'),
 			start,
 			end,
 			step;
@@ -42,7 +42,7 @@ function getCellsFromString(StrCells, nbCells) {
 		}
 	}
 	else {
-		arrCell = StrCells.split(',');
+		arrCell = strCells.split(',');
 		arrCell = arrCell.map(e => {
 			let v = parseInt(e);
 			let idx = v >=0 ? v : transformNegativeIndex(v, nbCells);
