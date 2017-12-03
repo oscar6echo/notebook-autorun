@@ -152,3 +152,5 @@ from notebook_autorun import Autorun
 Autorun.info()
 ```
 
+
+<!-- pandoc --from=markdown --to=rst --output=README.rst README.md -->
