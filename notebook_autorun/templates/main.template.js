@@ -56,6 +56,20 @@ require([
 						console.log('cell ' + i + ' does not exist');
 					}
 				}
+
+				{% if data.focus is defined %}
+				{% include 'getCellToFocus.js' %}
+				let f = getCellToFocus(nbCells, '__$data.focus$__');
+				let nbCell = nbCells[f];
+				if (nbCell) {
+					console.log('focus on cell ' + f);
+					nbCell.focus_cell();
+				}
+				else {
+					console.log('cell ' + f + ' does not exist');
+				}
+				{% endif %}
+
 			}
 			else {
 				// notebook is not trusted let the user know about it

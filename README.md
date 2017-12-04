@@ -86,18 +86,36 @@ Only one of them must be specified:
     # all cells with metadata "autorun: true" will be run  
     ```
 
-+ `comment`: Boolean (default is `False`). If `True`, all cells containing a comment `comment_flag` (default is `# AUTORUN`) are concerned.  
++ `comment`: Boolean (default is `False`). If `True`, all cells containing a string `comment_flag` in a comment line (default is `AUTORUN`) are concerned.  
 
     Example: 
     ```Python
     Autorun(comment=True).add_js()
-    # all cells including the string "# AUTORUN" will be run  
+    # all cells including string "AUTORUN" in a comment line will be run  
 
-    Autorun(comment=True, comment_flag='# MYCUSTOMFLAG').add_js()
-    # all cells including the string "# MYCUSTOMFLAG" will be run  
+    Autorun(comment=True, comment_flag='MYCUSTOMFLAG').add_js()
+    # all cells including string "MYCUSTOMFLAG" in a comment line will be run  
     ```
 
-### 2.2 - Status message
+### 2.2 - Focus on Cell
+
+If you want to focus on a specific cell after autorun, you can use arg `focus`.  
+By default `focus=None`.  
+
+Examples:
+```Python
+Autorun(metadata=True, focus=5).add_js()
+# cell 5 will focus after autorun
+
+Autorun(metadata=True, focus=-2).add_js()
+# cell 6 will focus after autorun
+
+Autorun(metadata=True).add_js()
+# cell 0 will focus after autorun
+```
+
+
+### 2.3 - Status message
 
 By default `verbose=True`.  
 It displays a warnnig message then status info:
@@ -122,7 +140,7 @@ Autorun(metadata=True).add_js()
 # no visible output - but the js code is injected
 ```
 
-### 2.3 - Security
+### 2.4 - Security
 
 Because a notebook is designed to allow the user to write arbitrary code, it has full access to many resources.   
 

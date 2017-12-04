@@ -28,6 +28,7 @@ class Autorun:
                  metadata=False,
                  comment=False,
                  comment_flag='# AUTORUN',
+                 focus=None,
                  verbose=True):
         """
         """
@@ -35,12 +36,20 @@ class Autorun:
         msg = 'Exactly one of cells/metadata/comment must be set'
         assert sum([bool(e) for e in inputs]) == 1, msg
 
-        str_cells = self._cells_to_str(cells)
-        self.data = {'str_cells': str_cells,
-                     'metadata': metadata,
-                     'comment': comment,
-                     'comment_flag': comment_flag,
-                     }
+        if focus:
+            msg = 'focus, if defined, must be an int'
+            assert isinstance(focus, int), msg
+
+        if cells:
+            self.data = {'str_cells': self._cells_to_str(cells)}
+        if metadata:
+            self.data = {'metadata': metadata}
+        if comment:
+            self.data = {'comment': comment,
+                         'comment_flag': comment_flag}
+        if focus:
+            self.data['focus'] = focus
+
         self.verbose = verbose
 
     def add_js(self):
