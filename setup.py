@@ -40,14 +40,14 @@ package_data = meta_ns['__package_data__']
 install_requires = parse_requirements('requirements.txt', session=False)
 install_requires = [str(ir.req) for ir in install_requires]
 
-with open('README.rst') as f:
-    long_description = f.read()
+# with open('README.rst') as f:
+#     long_description = f.read()
 
 setup(
     name=name,
     version=version,
     description=description,
-    long_description=long_description,
+    # long_description=long_description,
     author=author,
     author_email=author_email,
     url=url,
