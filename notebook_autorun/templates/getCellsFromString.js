@@ -1,6 +1,6 @@
 
 
-function getCellsFromString(strCells, nbCells) {
+let getCellsFromString = function(strCells, nbCells) {
 	//strCells contains a Python string representing a list
 
 	let arrCell = [];
@@ -50,8 +50,8 @@ function getCellsFromString(strCells, nbCells) {
 		});
 	}
 	return arrCell;
-}
+};
 
-function transformNegativeIndex(negIndex, nbCells){
+let transformNegativeIndex = function(negIndex, nbCells){
 	return nbCells.length + negIndex;
-}
+};

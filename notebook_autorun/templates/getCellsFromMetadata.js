@@ -1,6 +1,6 @@
 
 
-function getCellsFromMetadata(nbCells) {
+let getCellsFromMetadata = function(nbCells) {
 
 	let arrCell = [];
 	for (let [i, nbCell] of nbCells.entries()) {
@@ -10,4 +10,4 @@ function getCellsFromMetadata(nbCells) {
 	}
 
 	return arrCell;
-}
+};
