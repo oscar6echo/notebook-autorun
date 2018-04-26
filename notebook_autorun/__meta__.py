@@ -2,8 +2,7 @@
 __name__ = 'notebook_autorun'
 name_url = __name__.replace('_', '-')
 
-__packages__ = [__name__]
-__version__ = '0.1.6'
+__version__ = '0.1.7'
 __description__ = 'Auto run certain cells upon notebook start - if trusted'
 __author__ = 'oscar6echo'
 __author_email__ = 'olivier.borderies@gmail.com'
